@@ -10,4 +10,8 @@ describe('Teste a função fetchCharacter', () => {
     const failRequest = await fetchCharacter();
     expect(failRequest).toEqual(new Error('You must provide an url'));
   })
+  it('Verifica se retorna erro ao executar a função sem parâmetro', async () => {
+    const resposta = await fetchCharacter('parâmetro qualquer');
+    expect(resposta).toBe('Invalid id');
+  })
 });
